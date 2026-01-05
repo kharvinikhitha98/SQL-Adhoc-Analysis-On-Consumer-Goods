@@ -7,6 +7,8 @@ To strengthen their analytics capability, the Data Analytics Director designed a
 
 This repository contains my end-to-end solution to that challenge.
 
+*This project is a part of CodeBasics Data Challenge [Link](https://codebasics.io/challenges/codebasics-resume-project-challenge/7)*
+
 ## 🎯 Objective
 - Answer 10 real business ad-hoc requests using SQL
 - Transform raw transactional data into executive-level insights
