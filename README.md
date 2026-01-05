@@ -1,13 +1,9 @@
 # 🚀 AtliQ Hardwares – SQL Ad-Hoc Business Insights Challenge
 
 ## 📌 Project Summary
-AtliQ Hardwares is a leading computer hardware manufacturer in India with a strong international footprint. As the business scaled rapidly, leadership identified a challenge — lack of fast data-driven insights for strategic decision-making.
+AtliQ Hardwares is a leading computer hardware manufacturer in India with a strong international footprint. As the business scaled rapidly, leadership identified a challenge - lack of fast data-driven insights for strategic decision-making. To strengthen their analytics capability, the Data Analytics Director designed a real-world SQL Ad-Hoc Challenge to assess candidates on technical SQL expertise, business problem-solving ability, and communication skills.
 
-To strengthen their analytics capability, the Data Analytics Director designed a real-world SQL Ad-Hoc Challenge to assess candidates on technical SQL expertise, business problem-solving ability, and communication skills.
-
-This repository contains my end-to-end solution to that challenge.
-
-*This project is a part of CodeBasics Data Challenge [Link](https://codebasics.io/challenges/codebasics-resume-project-challenge/7)*
+*This project is a part of CodeBasics Data Challenge  [Link](https://codebasics.io/challenges/codebasics-resume-project-challenge/7)*
 
 ## 🎯 Objective
 - Answer 10 real business ad-hoc requests using SQL
