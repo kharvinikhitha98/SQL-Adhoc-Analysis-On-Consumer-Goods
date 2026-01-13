@@ -28,7 +28,7 @@ ORDER BY product_count DESC;
 
 /*Which segment had the most increase in unique products in 2021 vs 2020?*/
 WITH
-x AS (
+data_2020 AS (
 	SELECT segment, COUNT(DISTINCT(s.product_code)) AS product_2020 
 	FROM fact_sales_monthly s 
 	JOIN dim_product p 
@@ -36,7 +36,7 @@ x AS (
     WHERE fiscal_year=2020 
     GROUP BY segment
     ),
-y AS (
+data_2021 AS (
 	SELECT segment, COUNT(DISTINCT(s.product_code)) AS product_2021 
     FROM fact_sales_monthly s 
     JOIN dim_product p 
@@ -44,13 +44,13 @@ y AS (
     WHERE fiscal_year=2021 
     GROUP BY segment)
 SELECT 
-	x.segment,
+	data_2020.segment,
 	product_2020, 
 	product_2021,
 	product_2021-product_2020  AS differenece
-FROM x 
-JOIN y
-ON x.segment=y.segment;
+FROM data_2020 
+JOIN data_2021
+ON data_2020.segment=data_2021.segment;
 
 /*Get the products that have the highest and lowest manufacturing costs.*/
 SELECT p.product_code, p.product, m.manufacturing_cost
@@ -102,7 +102,7 @@ WHERE f.fiscal_year=2021
 GROUP BY c.channel;
 
 /*Get the Top 3 products in each division that have a high total_sold_quantity in the fiscal_year 2021?*/
-WITH x AS(
+WITH data_2021 AS(
 	SELECT 
 		division,
 		p.product_code,
@@ -113,12 +113,12 @@ WITH x AS(
 	ON p.product_code=f.product_code
 	WHERE fiscal_year=2021
 	GROUP BY p.division, p.product_code, p.product),
-    Y as (
+   ranking_2021_data as (
     SELECT 
 		*,
 		DENSE_RANK() OVER(PARTITION BY division ORDER BY total_sold_quantity DESC) AS rank_order
-	FROM x)
-SELECT * FROM y
+	FROM data_2021)
+SELECT * FROM ranking_2021_data
 WHERE rank_order<=3;
 
 
